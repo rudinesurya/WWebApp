@@ -12,6 +12,8 @@ import { AddSensorModalComponent } from './components/add-sensor-modal/add-senso
 import { AddWeatherDataModalComponent } from './components/add-weather-data-modal/add-weather-data-modal.component';
 import { SensorDetailViewComponent } from './components/sensor-detail-view/sensor-detail-view.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SensorService } from './services/sensor.service';
+import { WeatherDataService } from './services/weather-data.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
       { path: '**', component: PageNotFoundComponent },
     ])
   ],
-  providers: [],
+  providers: [
+    SensorService,
+    WeatherDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
