@@ -1,0 +1,27 @@
+
+    <h3>Sensor {{ sensor.name }}</h3>
+    <h3>City: {{ sensor.city }}</h3>
+    <h3>Country: {{ sensor.country }}</h3>
+    <h3>Avereage Temperature: {{ sensor.averageTemperature | number: '1.2-2' }}</h3>
+    <h3>Avereage Humidity: {{ sensor.averageHumidity | number: '1.2-2'}}</h3>
+    
+    
+    <mat-dialog-content>
+        <mat-list class="app-class" role="list">
+            <mat-list-item *ngFor="let wd of sensor.weatherData" role="listitem">
+                <mat-card class="example-card">
+                    <mat-card-title>{{wd.dateTime | date}}</mat-card-title>
+                    
+                    <mat-card-content>
+                      <p>Temperature: {{wd.temperature | number: '1.2-2'}}</p>
+                      <p>Humidity: {{wd.humidity | number: '1.2-2'}}</p>
+                    </mat-card-content>
+                  </mat-card>
+            </mat-list-item>
+        </mat-list>
+    </mat-dialog-content>
+    
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+</mat-dialog-actions>
