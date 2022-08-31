@@ -11,8 +11,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { WeatherDataItemComponent } from './components/weather-data-item/weather-data-item.component';
-import { WeatherDataListComponent } from './components/weather-data-list/weather-data-list.component';
 import { SensorListComponent } from './components/sensor-list/sensor-list.component';
 import { AddSensorModalComponent } from './components/add-sensor-modal/add-sensor-modal.component';
 import { AddWeatherDataModalComponent } from './components/add-weather-data-modal/add-weather-data-modal.component';
@@ -26,8 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     HomeComponent,
-    WeatherDataItemComponent,
-    WeatherDataListComponent,
     SensorListComponent,
     AddSensorModalComponent,
     AddWeatherDataModalComponent,

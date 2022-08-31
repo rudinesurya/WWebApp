@@ -25,7 +25,6 @@ export class SensorService {
     if (endDate !== undefined)
       params = params.append('endDate', endDate!.toISOString());
 
-    console.log(params);
     return this.http.get<Sensor[]>(this.apiUrl, {params: params});
   }
 

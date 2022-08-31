@@ -1,14 +1,15 @@
 
     <h3>Sensor {{ sensor.name }}</h3>
+    <h3>GUID: {{ sensor.id }}</h3>
     <h3>City: {{ sensor.city }}</h3>
     <h3>Country: {{ sensor.country }}</h3>
-    <h3>Avereage Temperature: {{ sensor.averageTemperature | number: '1.2-2' }}</h3>
-    <h3>Avereage Humidity: {{ sensor.averageHumidity | number: '1.2-2'}}</h3>
+    <h3>Average Temperature: {{ sensor.averageTemperature | number: '1.2-2' }}</h3>
+    <h3>Average Humidity: {{ sensor.averageHumidity | number: '1.2-2'}}</h3>
     
     
-    <mat-dialog-content>
+    <mat-dialog-content style="height: 25em; background-color: #ececec">
         <mat-list class="app-class" role="list">
-            <mat-list-item *ngFor="let wd of sensor.weatherData" role="listitem">
+            <mat-list-item *ngFor="let wd of sensor.weatherData" role="listitem" style="padding-bottom: 0.5em">
                 <mat-card class="example-card">
                     <mat-card-title>{{wd.dateTime | date}}</mat-card-title>
                     

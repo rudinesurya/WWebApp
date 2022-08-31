@@ -18,16 +18,20 @@ export class SensorListComponent implements OnInit {
     let endDate = new Date(); 
     let startDate = new Date();  
     startDate.setFullYear(startDate.getFullYear() - 1);
-    
+
     this.sensorService.getSensors(undefined, startDate, endDate)
       .subscribe( {
         next: (sensors) => this.sensors = sensors,
-        error: console.error
+        error: (error) => {
+          console.error(error);
+          alert(error.error.title ?? error.error);
+        }
       });
   }
 
   onItemClick(value: Sensor){
     const dialogRef = this.dialog.open(SensorDetailModalComponent, {
+      height: '45em',
       disableClose: true,
       autoFocus: true,
       data: value,
